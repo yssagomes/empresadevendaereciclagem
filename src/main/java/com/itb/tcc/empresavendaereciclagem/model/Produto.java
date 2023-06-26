@@ -21,23 +21,30 @@ public class Produto {
 	public Long getId() {
 		return id;      
 	}        // nao precisa colocar o this aqui pois não tem nenhuma variavel inserida 
-
-	public void setNome(Long nome) {
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getNome() {
-		return nome;      
-	}  
-	public void setDescrição(Long descricao) {
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Long getDescrição() {
-		return descricao;      
-	}  
-	public void setcodigoBarras(Long codigoBarras) {
-		this.codigobarras = codigobarras;
+	public String getCodigoBarras() {
+		return codigoBarras;
 	}
-	public Long getcodigoBarras() {
-		return codigoBarras;      
-	}  
+	public void setCodigoBarras(String codigoBarras) {
+		this.codigoBarras = codigoBarras;
+	}
+	public double getPreco() {
+		return preco;
+	}
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+
 }

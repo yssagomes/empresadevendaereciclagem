@@ -1,9 +1,11 @@
 package com.itb.tcc.empresavendaereciclagem.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,10 +17,10 @@ import com.itb.tcc.empresavendaereciclagem.model.Produto;
 @RequestMapping("/comercio/produtos")
 public class LojaController {
 	
-	List<Produto> listaDeProdutos = new ArraysList<Produto>();
+	List<Produto> listaDeProdutos = new ArrayList<Produto>();
 	
   @GetMapping("/Listar")
-    public String listarProdutos() {
+    public String listarProdutos(Model model) {
     	System.out.println("lista de produtos");
     	
 
@@ -37,10 +39,12 @@ public class LojaController {
             p2.setPreco(6326.12);
 
             // Adicionando os produtos á lista
-            
             listaDeProdutos.add(p1);
-            
-         return "produtos";
+            listaDeProdutos.add(p2);
+
+            model.addAttribute("listaDeProdutos", listaDeProdutos);
+            return "produtos";
+
         }
     }
 		
